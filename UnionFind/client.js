@@ -1,10 +1,13 @@
 const fs = require('fs');
 const QuickFindUF = require('./QuickFindUF.js');
+const path = require('path') // <-- import path module to use absolute path.
+
 
 
 try {
-  let x= 10;
-  let data = fs.readFileSync('./inputData/tinyUF.txt', 'utf8');
+  const filepath = path.join(__dirname,'inputData/tinyUF.txt');
+  console.log(filepath)
+  let data = fs.readFileSync(filepath, 'utf8');
   data = data.split('\n');
 
   let n = data[0];
