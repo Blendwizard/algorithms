@@ -5,8 +5,7 @@ Cost-model: Number of array accesses (for read or write).
 quick-find      N           N       1
 
 Draw-backs:
-Union is too expensive: It takes N^2 array accesses to process a sequence of
-N union commands on N objects.
+Union is too expensive: It takes N^2 array accesses to process a sequence of N union commands on N objects.
 
 Quadratic algorithms will not scale with increasing problem size.
 */
@@ -14,7 +13,8 @@ Quadratic algorithms will not scale with increasing problem size.
 class QuickFindUF {
   // 'n' is the number of objects. Our constructor will create a data structure containing that number of objects.
   constructor(n) {
-    this.id_array = [];
+    // Fill an array of n-size with 0s as placeholders until we populate it
+    this.id_array = new Array(n).fill(0);
     // Set id of each object to itself (populate array) (N-array accesses)
     for (let x = 0; x < n; x++) {
       this.id_array[x] = x;
