@@ -21,7 +21,7 @@ Find query: Check if two objects are in the same component.
 Union command: Replace components containing two objects
 with their union.
 
-In order of effectiveness:
+In order of increasing efficiency:
 QuickFindUF
 QuickUnionUF
 WeightedQuickUnion
