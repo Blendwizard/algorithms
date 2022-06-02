@@ -2,6 +2,7 @@ const fs = require('fs');
 const QuickFindUF = require('./QuickFindUF.js');
 const QuickUnionUF = require('./QuickUnionUF.js');
 const WeightedQuickUnionUF = require('./WeightedQuickUnion.js');
+const WQU_Path_Compression = require('./WQU_Path_Compression.js');
 const path = require('path')
 
 
@@ -10,7 +11,7 @@ This program reads one of the text files from the inputData folder and executes 
 */
 
 try {
-  const filepath = path.join(__dirname,'inputData/tinyUF.txt');
+  const filepath = path.join(__dirname,'inputData/mediumUF.txt');
   let data = fs.readFileSync(filepath, 'utf8');
   data = data.split('\n');
 

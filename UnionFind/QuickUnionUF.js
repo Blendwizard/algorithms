@@ -1,5 +1,10 @@
 /*
 Quick Union looks to make improvements to Quick Find by optimizing the Union method previously defined.
+
+Cost-model: Number of array accesses (for read or write).
+(algorithm)     (initialize)      (union)      (find)
+quick-union          N          tree height   tree height
+
 Quick Union makes use of the same data structure, a site-indexed ID array, however the interpretation of each entry is different.
 
 Each entry instead refers to name of another site or object in the same component. This connection is referred to as a "link".

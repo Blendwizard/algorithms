@@ -2,6 +2,10 @@
 /*
 The second optimization for Union Find which attaches smaller trees to larger trees during Union operations.
 With this optimization, we can successfully evaluate the largeUF.txt file within a reasonable amount of time.
+
+Performance characteristics:
+(algorithm)             (initialize)      (union)      (find)
+weighted quick-union         N             log n        log n
 */
 
 class WeightedQuickUnionUF {
@@ -45,6 +49,7 @@ class WeightedQuickUnionUF {
     while (p !== this.id_array[p]) {
       p = this.id_array[p];
     }
+
     return p;
   }
 
