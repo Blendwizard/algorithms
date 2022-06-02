@@ -23,12 +23,12 @@ class QuickFindUF {
   }
 
   // Check if objects are within same component (2 array accesses)
-  connected = (p, q) => {
+  connected(p, q) {
     return this.id_array[p] === this.id_array[q];
   }
 
   // Change all objects with id[p] to id[q]
-  union = (p, q) => {
+  union(p, q) {
     let pID = this.id_array[p];
     let qID = this.id_array[q];
 
@@ -41,12 +41,12 @@ class QuickFindUF {
     this.componentCount--;
   }
 
-  count = () => {
+  count() {
     // Tracks the number of components. Count will always start as 'n' (individual objects).
     return this.componentCount;
   }
 
-  find = (p) => {
+  find(p) {
     return this.id_array[p];
   }
 

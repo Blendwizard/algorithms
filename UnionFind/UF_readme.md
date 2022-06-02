@@ -20,3 +20,8 @@ Implementation:
 Find query: Check if two objects are in the same component.
 Union command: Replace components containing two objects
 with their union.
+
+In order of effectiveness:
+QuickFindUF
+QuickUnionUF
+WeightedQuickUnion
