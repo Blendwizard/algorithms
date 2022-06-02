@@ -13,8 +13,8 @@ Quadratic algorithms will not scale with increasing problem size.
 class QuickFindUF {
   // 'n' is the number of objects. Our constructor will create a data structure containing that number of objects.
   constructor(n) {
-    // Fill an array of n-size with 0s as placeholders until we populate it
-    this.id_array = new Array(n).fill(0);
+
+    this.id_array = [];
     // Set id of each object to itself (populate array) (N-array accesses)
     for (let x = 0; x < n; x++) {
       this.id_array[x] = x;

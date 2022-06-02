@@ -8,7 +8,7 @@ This program reads one of the text files from the inputData folder and executes 
 */
 
 try {
-  const filepath = path.join(__dirname,'inputData/tinyUF.txt');
+  const filepath = path.join(__dirname,'inputData/mediumUF.txt');
   let data = fs.readFileSync(filepath, 'utf8');
   data = data.split('\n');
 
