@@ -19,6 +19,7 @@ class QuickFindUF {
     for (let x = 0; x < n; x++) {
       this.id_array[x] = x;
     }
+    this.componentCount = n;
   }
 
   // Check if objects are within same component (2 array accesses)
@@ -37,6 +38,12 @@ class QuickFindUF {
         this.id_array[x] = qID;
       }
     }
+    this.componentCount--;
+  }
+
+  count = () => {
+    // Tracks the number of components. Count will always start as 'n' (individual objects).
+    return this.componentCount;
   }
 
 
