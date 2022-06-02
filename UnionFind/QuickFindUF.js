@@ -46,6 +46,10 @@ class QuickFindUF {
     return this.componentCount;
   }
 
+  find = (p) => {
+    return this.id_array[p];
+  }
+
 
 }
 
