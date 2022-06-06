@@ -6,7 +6,7 @@
   Selection Sort uses ~(N^2/2) compares and (N) exchanges to sort an array of length N.
 
   Pros: Easy to implement and understand, useful for small arrays.
-  Cons: Quadratic time complexity means that Selection Sort will not scale properly with large inputs
+  Cons: Quadratic time complexity means that Selection Sort will not scale properly with large inputs.
 
 */
 
