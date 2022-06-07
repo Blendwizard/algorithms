@@ -15,7 +15,7 @@ const Mergesort = (array) => {
     for (let k = lo; k <= hi; k++) {
       if (i > mid) {
         arr[k] = aux[j++];
-      } else if (j > mid) {
+      } else if (j > hi) {
         arr[k] = aux[i++];
       } else if (less(aux[j], aux[i])) {
         arr[k] = aux[j++];
@@ -38,7 +38,7 @@ const Mergesort = (array) => {
     // Merge both halves
     merge(arr, aux, lo, mid, hi);
 
-
+    return arr;
   }
 
   // Call sort method with starting arguments
