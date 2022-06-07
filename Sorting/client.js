@@ -3,10 +3,11 @@ const path = require('path');
 const Selection_Sort = require('./Selection-Sort.js');
 const Insertion_Sort = require('./Insertion-Sort.js');
 const Shellsort = require('./Shell-Sort.js');
+const Mergesort = require('./Merge-Sort.js');
 
 
 try {
-  const filepath = path.join(__dirname,'Input_Data/8KInts.txt');
+  const filepath = path.join(__dirname,'Input_Data/1KInts.txt');
   let data = fs.readFileSync(filepath, 'utf8');
   data = data.split('\n');
 
@@ -19,9 +20,10 @@ try {
   console.time('mark');
 
   // Choose algorithm
-  Selection_Sort(data);
+  // Selection_Sort(data);
   // Insertion_Sort(data);
-  // Shellsort(data);
+  // console.log(Shellsort(data));
+  console.log(Mergesort(data));
 
 
   console.timeEnd('mark');

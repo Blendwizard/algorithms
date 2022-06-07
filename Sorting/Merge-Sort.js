@@ -38,6 +38,7 @@ const Mergesort = (array) => {
     // Merge both halves
     merge(arr, aux, lo, mid, hi);
 
+
   }
 
   // Call sort method with starting arguments
@@ -45,3 +46,5 @@ const Mergesort = (array) => {
   return sort(array, aux, 0, array.length - 1);
 
 }
+
+module.exports = Mergesort;
