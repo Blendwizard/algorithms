@@ -16,7 +16,7 @@ A: 1. Powers of 2? No. Elements in even positions will not be compared with elem
 The best sequence is not known and continues to elude researchers.
 
 
-Proposition: The worst-case number of compares used by Shellsort with the (3x + 1) increment sequence is O(N^3/2).
+Proposition: The worst-case number of compares used by Shellsort with the (3x + 1) increment sequence is O(N^3/2)
 Property: In practice, number of compares used with this sequence is at most by a small multiple of N times the # of increments used.
 Remark: No accurate model has been proven as of yet.
 
