@@ -33,16 +33,17 @@ Optimizations:
 1. Mergesort has high overhead cost for small subarrays. Solution? Use Insertion Sort after a certain array-size cutoff point.
 2. Stop if already sorted: If the biggest item in the left half <= the smallest item in the right half.
 
+Takeaway: Mergesort is optimal with respect to # of compares but NOT optimal with regards to space usage. The algorithm we choose to
+solve a problem might be dependent on the constraints in regards to space and/or time.
 
-Below Mergesort is another implementation known as Bottom-Up Mergesort which does not rely on recursion and instead merges subarrays
-of size 1, 2, 4, 8, 16, ...
+----------------------
+At the bottom of this file is another implementation known as Bottom-Up Mergesort which does not rely on recursion and instead merges subarrays
+of size 1, 2, 4, 8, 16, ... until the array is fully sorted.
 
-BU-Mergesort uses the same merge method but sorts without recursion by using 2 for-loops: the outer loop is the size of the subarray which
-is executed log n times until we get to 'n' (the array length).
-
-
+BU-Mergesort uses the same merge method but instead sorts without recursion by using 2 for-loops: the outer loop is the size of the subarray which is executed log n times until we get to 'n' (the array length).
 
 */
+
 
 const Mergesort = (array) => {
 
