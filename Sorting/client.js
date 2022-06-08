@@ -7,7 +7,7 @@ const Mergesort = require('./Merge-Sort.js');
 
 
 try {
-  const filepath = path.join(__dirname,'Input_Data/8KInts.txt');
+  const filepath = path.join(__dirname,'Input_Data/1KInts.txt');
   let data = fs.readFileSync(filepath, 'utf8');
   data = data.split('\n');
 
@@ -24,6 +24,7 @@ try {
   // Insertion_Sort(data);
   // Shellsort(data);
   Mergesort(data);
+
 
 
   console.timeEnd('mark');
