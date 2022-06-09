@@ -11,7 +11,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/Sorting/client.js"
+      "program": "${workspaceFolder}/Sorting/Select/Quick-Select.js"
     }
   ]
 }

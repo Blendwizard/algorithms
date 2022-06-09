@@ -51,11 +51,8 @@ const Quickselect = (array, k) => {
     } else {
       return array[k];
     }
-    console.log(array)
   }
-  console.log("END:::", array)
   return array[k];
 }
+Quickselect([1,2,3,4], 2)
 
-const input = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
-console.log(Quickselect(input, 5));
