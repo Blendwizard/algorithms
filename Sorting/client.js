@@ -4,10 +4,10 @@ const Selection_Sort = require('./Selection-Sort.js');
 const Insertion_Sort = require('./Insertion-Sort.js');
 const Shellsort = require('./Shell-Sort.js');
 const Mergesort = require('./Merge-Sort.js');
-
+const Quicksort = require('./Quick-Sort.js');
 
 try {
-  const filepath = path.join(__dirname,'Input_Data/1KInts.txt');
+  const filepath = path.join(__dirname,'Input_Data/8KInts.txt');
   let data = fs.readFileSync(filepath, 'utf8');
   data = data.split('\n');
 
@@ -23,7 +23,8 @@ try {
   // Selection_Sort(data);
   // Insertion_Sort(data);
   // Shellsort(data);
-  Mergesort(data);
+  // Mergesort(data);
+  Quicksort(data);
 
 
 
