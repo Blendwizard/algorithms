@@ -54,5 +54,4 @@ const Quickselect = (array, k) => {
   }
   return array[k];
 }
-Quickselect([1,2,3,4], 2)
 
