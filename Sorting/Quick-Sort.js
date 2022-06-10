@@ -50,6 +50,19 @@ Optimizations:
 Sedgewick Lesson 1: Good algorithms are better than supercomputers.
 Sedgewick Lesson 2: Great algorithms are better than good algorithms.
 
+After the Quicksort implementation is another Quicksort variation used for arrays with large number of duplicate keys.
+Originally, Quicksort put all items equal to the partitioning item on one side: this results in a quadratic number of compares when
+all keys are equal.
+Our Quicksort below stops scans on items that are equal to the partitioning item, which gives us ~N lg N compares.
+
+A further optimization is known as Quicksort with 3-Way Partitioning, and allows us to sort an array of equal keys in linear time.
+
+Implementation:
+Partition array into 3 parts: Entries between 'lt' and 'gt' are equal to the partition item 'v'.
+No larger items to the left of 'lt'.
+No smaller entries to the right of 'gt'.
+
+
 */
 
 
@@ -90,13 +103,47 @@ const Quicksort = (array) => {
     sort(arr, lo, j-1);
     // Sort right partition
     sort(arr, j+1, hi);
-
-    return arr;
   }
 
   // Shuffle our array
   KnuthShuffle(array);
-  return sort(array, 0, array.length - 1);
+  // Make first call to sort
+  sort(array, 0, array.length - 1);
+  return array;
 }
 
-module.exports = Quicksort;
+
+
+// Quicksort with 3-way partitioning for duplicate keys.
+const QS_DuplicateKeys = (array) => {
+
+  const sort = (arr, lo, hi) => {
+    if (hi <= lo) {
+      return;
+    }
+
+    let lt = lo;
+    let gt = hi;
+
+    let v = arr[lo];
+    let i = lo;
+
+    while (i <= gt) {
+      if (arr[i] < v) {
+        exchange(arr, lt++, i++);
+      } else if (arr[i] > v) {
+        exchange(arr, i, gt--)
+      } else {
+        i++;
+      }
+    }
+    sort(array, lo, lt - 1);
+    sort(array, gt + 1, hi);
+  }
+  KnuthShuffle(array);
+  sort(array, 0, array.length - 1);
+  return array;
+}
+
+
+module.exports = Quicksort, QS_DuplicateKeys;
