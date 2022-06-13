@@ -1,5 +1,5 @@
-const less = require('./helpers/less.js');
-const exchange = require('./helpers/exchange.js');
+const less = require('../helpers/less.js');
+const exchange = require('../helpers/exchange.js');
 /*
 A Priority Queue (PQ) is used as a variant of sorting while providing a flexible data structure used in many applications.
 Similar to the basic Queue in our Fundamentals section, the Priority Queue implements the same overall structure with one key difference:
