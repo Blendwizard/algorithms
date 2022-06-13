@@ -125,16 +125,6 @@ class BinaryHeap {
   }
 }
 
-let test = new BinaryHeap();
-test.insert(3)
-test.insert(10)
-test.insert(1)
-test.insert(4)
-test.insert(2)
-console.log(test.deleteMax());
-console.log(test)
-test.insert(10)
-console.log(test)
 
-
+module.exports = BinaryHeap;
 
