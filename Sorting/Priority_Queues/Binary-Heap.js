@@ -46,6 +46,28 @@ Fixing the violation -> Exchange key in parent with key in larger child. Repeat 
 
 This is known as the "sink" operation.
 
+Performance Review:
+Elementary Priority Queue (Unordered) -> insert = O(1); delete max = O(N); find max = O(N)
+Elementary Priority Queue (Ordered) -> insert = O(N); delete max = O(1); find max = O(1)
+Binary Heap -> insert = O(log N); delete max = O(log N); find max = O(1)
+
+Further advanced optimizations include: d-ary heaps and Fibonacci heaps.
+
+Considerations:
+1. Immutability of keys: the assumption that the client does not change keys while they're on PQ.
+Best Practice: Use immutable keys.
+
+2. Underflow & Overflow:
+Minimum: throw exception if deleting from empty PQ.
+Overflow: add no-arg constructor and use resizing array (depending on language used).
+
+3. Minimum-oriented priority queue?
+Replace less() with greater().
+
+4. Other operations?
+Remove an arbitrary item?
+Change the priority of an item?
+
 */
 
 
@@ -69,7 +91,7 @@ class BinaryHeap {
     while (2*k <= this.n) {
       let j = 2*k;
       // Determine the larger child
-      if (j < n && less(this.queue[j], this.queue[j+1])) {
+      if (j < this.n && less(this.queue[j], this.queue[j+1])) {
         j++;
       }
       if (!less(this.queue[k], this.queue[j])) {
@@ -87,11 +109,19 @@ class BinaryHeap {
   }
 
   deleteMax() {
+    // Save the value at the root
     let max = this.queue[1];
+    // Exchange with last value
     exchange(this.queue, 1, this.n--);
+    // Sink the new root to its correct location in the tree
     this.sink(1);
-    this.queue[this.n + 1] = null;
+    // Remove reference to last node in tree (In JS, we can delete this item, in Java, you might set this to null)
+    delete this.queue[this.n + 1];
     return max;
+  }
+
+  isEmpty() {
+    return this.n === 0;
   }
 }
 
@@ -101,7 +131,10 @@ test.insert(10)
 test.insert(1)
 test.insert(4)
 test.insert(2)
-console.log(test);
+console.log(test.deleteMax());
+console.log(test)
+test.insert(10)
+console.log(test)
 
 
 
