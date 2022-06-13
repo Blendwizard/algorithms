@@ -11,7 +11,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/Sorting/Select/Quick-Select.js"
+      "program": "${workspaceFolder}/Sorting/Priority_Queues/Binary-Heap.js"
     }
   ]
 }
