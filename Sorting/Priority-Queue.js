@@ -41,13 +41,12 @@ class UnorderedMaxPQ {
   deleteMax() {
     let max = 0;
     for (let i = 1; i < this.n; i++) {
-      if (less(max, i)) {
+      if (less(this.queue[max], this.queue[i])) {
         max = i;
       }
-      exchange(max, this.n - 1);
-      return this.queue[this.n];
     }
+    exchange(this.queue, max, this.n - 1);
+    this.n--;
+    return this.queue.pop();
   }
-
-
 }
