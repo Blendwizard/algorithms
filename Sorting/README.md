@@ -8,4 +8,5 @@
 | Merge |  | Yes | N lg N | N lg N | N lg N | N log N guarantee, stable
 | Quick | Yes | | N^2 / 2 | 2 N ln N | N lg N | N log N probabilistic guarantee, fastest in practice
 | 3-Way Quick | Yes | | N^2 / 2 | 2N ln N | N | improves quicksort in presence of duplicate keys
+| Heap | Yes | | 2 N lg N | 2 N lg N | N lg N | N log N guarantee, in-place
 | ??? | Yes | Yes | N lg N | N lg N | N lg N | holy sorting grail
