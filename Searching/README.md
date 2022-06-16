@@ -44,7 +44,12 @@ Best Practices: Use immutable types for symbol table keys (language-specific).
 
 The following elementary ST implementations show how we can implement easy STs but with much less efficiency, leading us to better solutions.
 Elementary Symbol Tables Summary:
-- Sequential Search (unordered list / linked list) - search: O(N); insert O(N).
-- Binary Search (ordered array) - search: O(log n); insert: O(N)
+- Sequential Search (unordered list / linked list)
+Guarantee: search = N; insert = N.
+Average Case: search = N/2; insert = N.
 
-Challenge: Find more efficient implementation
+- Binary Search (ordered array)
+Guarantee: search = lg N; insert = N.
+Average Case: search = lg N; insert = N/2.
+
+Challenge: Find more efficient implementation.
